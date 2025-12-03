@@ -4,37 +4,47 @@ export class startScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("background", "assets/background/mainBackground.png");
+    this.load.image("background", "assets/background/purpleBG.jpeg");
   }
 
   create() {
-    this.background = this.add.tileSprite(640, 360, 1280, 460, "background");
-    this.titletext = this.add.text(450, 50, "Immortal protocol", {
-      font: "40px",
-      fontFamily : "Press Start 2P",
-      fill: "#00ff00",
-    });
-    this.tweens.add({
-      targets: this.titletext,
-      x: this.titletext.x + 10,
-      duration: 580,
-      yoyo: true,
-      repeat: -1,
+   const texture = this.textures.get('background').source[0];
+    const originalWidth = texture.width;
+    const originalHeight = texture.height;
+
+    const scaleFactor = this.scale.height / originalHeight;
+    
+    this.background = this.add.tileSprite(
+      this.scale.width / 2 ,
+      this.scale.height / 2 ,
+      originalWidth,
+      originalHeight,
+      "background"
+    )
+    .setOrigin(0.5,0.5)
+    .setScrollFactor(0,0)
+    .setScale(scaleFactor)
+
+    this.titletext = this.add.text(350, 80, "Immortal protocol", {
+  
+      fontSize: "36px",
+      fontFamily : "'Press Start 2P'",
+      fill: "#e1b67aff",
+      backgroundColor : "black",
+      
     });
 
-    var animationConfig = {
-      key: "shake",
-      frames: this.anims.generateFrameNumbers("Logoname", {
-        start: 0,
-        end: 5,
-      }),
-      repeat: -1,
-      frameRate: 10,
-    };
-    this.anims.create(animationConfig);
+    this.tweens.add ({
+      targets : this.titletext,
+      y : this.titletext.y+10,
+      duration : 800,
+      yoyo : true,
+      repeat : -1,
+      
+    })
   }
 
   update() {
-    this.background.tilePositionX += 0.2;
+    
   }
 }
