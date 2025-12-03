@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "phaser": "^3.90.0",
     "timewatch": "^1.0.0"
   }
 }
