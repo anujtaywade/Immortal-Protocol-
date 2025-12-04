@@ -1,10 +1,15 @@
+
+
 export class startScene extends Phaser.Scene {
   constructor() {
     super("startScene");
   }
 
   preload() {
-    this.load.image("background", "assets/background/purpleBG.jpeg");
+    this.load.image("background", "assets/background/mainBackground.png");
+   this.load.image("playBtn","assets/Buttons/start btn.png")
+   this.load.image("creditBtn","assets/Buttons/credit Btn.png")
+   this.load.image("exitBtn","assets/Buttons/exit Btn.png")
   }
 
   create() {
@@ -25,7 +30,7 @@ export class startScene extends Phaser.Scene {
     .setScrollFactor(0,0)
     .setScale(scaleFactor)
 
-    this.titletext = this.add.text(350, 80, "Immortal protocol", {
+    this.titletext = this.add.text(350, 50, "Immortal protocol", {
   
       fontSize: "36px",
       fontFamily : "'Press Start 2P'",
@@ -42,6 +47,16 @@ export class startScene extends Phaser.Scene {
       repeat : -1,
       
     })
+
+   this.playBtn = this.add.image(330,300,"playBtn").setInteractive()
+   this.playBtn.setScale(0.8)
+   
+
+   this.creditBtn = this.add.image(360,400,"creditBtn").setInteractive()
+   this.creditBtn.setScale(1)
+
+   this.exitBtn = this.add.image(335,500,"exitBtn").setInteractive()
+   this.exitBtn.setScale(0.9)
   }
 
   update() {
