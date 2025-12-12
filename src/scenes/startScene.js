@@ -17,6 +17,7 @@ export class startScene extends Phaser.Scene {
     const originalWidth = texture.width;
     const originalHeight = texture.height;
 
+
     const scaleFactor = this.scale.height / originalHeight;
     
     this.background = this.add.tileSprite(
@@ -60,6 +61,8 @@ export class startScene extends Phaser.Scene {
 
    this.exitBtn = this.add.image(335,500,"exitBtn").setInteractive()
    this.exitBtn.setScale(0.9)
+
+
    
   }
 

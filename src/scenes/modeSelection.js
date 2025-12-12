@@ -15,7 +15,8 @@ export default class modeSelection extends Phaser.Scene {
 
     // Create game objects and set up the scene here
     create() {
-        
+            this.add.text(100, 100, "Mode Selection Scene");
+
     }
 
     // Update game logic each frame here
