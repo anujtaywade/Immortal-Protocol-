@@ -1,6 +1,6 @@
 
-
 import {startScene} from './scenes/startScene.js'
+import modeSelection from './scenes/modeSelection.js'
 
 const config = {
     type: Phaser.AUTO,
@@ -12,7 +12,8 @@ const config = {
     backgroundColor: '#000000',
     pixelArt: false,
     scene: [
-        startScene
+        startScene,
+        modeSelection
     ],
     scale: {
         mode: Phaser.Scale.FIT,
