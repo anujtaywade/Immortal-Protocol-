@@ -1,6 +1,7 @@
 
-import {startScene} from './scenes/startScene.js'
-import modeSelection from './scenes/modeSelection.js'
+import { startScene } from './scenes/startScene.js';
+import modeSelection from './scenes/modeSelection.js'; 
+
 
 const config = {
     type: Phaser.AUTO,
